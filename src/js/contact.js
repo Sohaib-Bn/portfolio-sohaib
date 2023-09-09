@@ -76,8 +76,6 @@ export const contact = function () {
 
   const checkInputs = inputs => inputs.every(input => input.value !== '');
 
-  console.log(btnSubmit);
-
   btnSubmit.forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();

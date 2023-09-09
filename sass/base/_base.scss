@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $break-point-meduimPlus) {
+    font-size: 55%;
+  }
+
+  @media only screen and (max-width: $break-point-meduim) {
+    font-size: 47%;
+  }
+
+  @media only screen and (max-width: $break-point-small) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: $break-point-smallest) {
+    font-size: 35%;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--color-grey-dark-2);
+  background-color: var(--color-white);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: max-content max-content;
+  row-gap: 1rem;
+  align-items: start;
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    display: grid;
+    margin: auto;
+    column-gap: 7rem;
+  }
+
+  &__container {
+    display: flex;
+    flex: 0 0 100%;
+    align-items: center;
+    gap: 0.5rem;
+
+    @media only screen and (max-width: $break-point-tiny) {
+      gap: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    @media only screen and (max-width: $break-point-small) {
+      font-size: 1.3rem;
+    }
+
+    @media only screen and (max-width: $break-point-tiny) {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+
+  &__data {
+    text-align: left;
+    @media only screen and (max-width: $break-point-small) {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    @media only screen and (max-width: $break-point-tiny) {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  color: var(--color-grey-1);
+  font-size: 1.4rem;
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey-dark-1);
+    transition: all 0.3s;
+
+    @media only screen and (max-width: $break-point-verytiny) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__link:hover &__icon {
+    transform: scale(1.1);
+    fill: var(--color-primary);
+    box-shadow: var(--box-shadow-light-1);
+  }
+}

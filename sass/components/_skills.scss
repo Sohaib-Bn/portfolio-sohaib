@@ -1,4 +1,14 @@
 .skills {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  column-gap: 3rem;
+  background-color: var(--color-grey-light-1);
+  @media only screen and (max-width: $break-point-verytiny) {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
   &__content {
     align-self: start;
     display: grid;

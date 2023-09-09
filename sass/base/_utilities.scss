@@ -2,20 +2,6 @@
   color: var(--color-primary);
 }
 
-@mixin u-border-bootom($left) {
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 4.5px;
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    left: $left;
-    // border-radius: 2px;
-    background-color: var(--color-primary);
-  }
-}
-
 .u-border-bottom--left {
   @include u-border-bootom(0);
 }

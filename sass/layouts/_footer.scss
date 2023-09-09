@@ -1,4 +1,12 @@
 .footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 5rem 10rem;
+  background-color: var(--color-tertiary);
+  @media only screen and (max-width: $break-point-verytiny) {
+    padding: 5rem;
+  }
+
   .social {
     justify-self: start;
     @media only screen and (max-width: $break-point-verytiny) {

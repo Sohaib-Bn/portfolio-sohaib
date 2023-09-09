@@ -1,4 +1,26 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  position: relative;
+  background-color: var(--color-grey-light-1);
+  overflow: hidden;
+  padding-bottom: 8rem;
+
+  @media only screen and (max-width: $break-point-meduimPlus) {
+    padding-bottom: 5rem;
+    height: auto;
+  }
+
+  @media only screen and (max-width: $break-point-meduim) {
+    padding-bottom: 10rem;
+  }
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    height: 80vh;
+    gap: 10rem;
+  }
+
   &::after {
     content: '';
     display: block;

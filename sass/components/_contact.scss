@@ -1,4 +1,15 @@
 .contact {
+  display: flex;
+  gap: 10rem;
+  background-color: var(--color-grey-light-1);
+  @media only screen and (max-width: $break-point-small) {
+    gap: 5rem;
+  }
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
   &__text {
     display: grid;
     grid-template-rows: repeat(5, max-content);
@@ -12,7 +23,7 @@
   &__form {
     flex: 0 0 40%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
     padding: 6rem;
     gap: 3rem;
     justify-content: center;
@@ -23,7 +34,7 @@
     overflow: hidden;
     @media only screen and (max-width: $break-point-tiny) {
       flex: 0 0 45%;
-      padding: 3rem 5rem;
+      padding: 5rem;
     }
 
     @media only screen and (max-width: $break-point-verytiny) {

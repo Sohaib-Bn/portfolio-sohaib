@@ -1,5 +1,8 @@
 .partners {
+  padding-top: 5rem !important;
+  padding-bottom: 0 !important;
   text-align: center;
+
   &__heading {
     font-size: 1.7rem;
     @media only screen and (max-width: $break-point-verytiny) {

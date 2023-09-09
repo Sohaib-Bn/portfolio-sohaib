@@ -8,7 +8,28 @@ import diceGame from 'url:../img/dice-game.png';
 const projectsNav = document.querySelector('.projects__nav');
 
 export const projectFilter = function () {
+  const projectsContainer = document.querySelector('.projects__container');
+  const btnShowMore = document.querySelector('.projects__link--more');
+  const btnShowLess = document.querySelector('.projects__link--less');
+
+  let moreLevel = 0;
   let currlink = document.querySelector('.projects__list[data-type="all"]');
+
+  const filter = function (list) {
+    const projects = document.querySelectorAll('.projects__project--filter');
+    projects.forEach(project => {
+      project.style.transition = 'all .5s';
+      project.classList.remove('hidden');
+    });
+    const filterType = list.dataset.type;
+    if (filterType === 'all') return;
+    console.log(filterType);
+    projects.forEach(project => {
+      if (!project.classList.contains(`projects__project--${filterType}`)) {
+        project.classList.add('hidden');
+      }
+    });
+  };
 
   projectsNav.addEventListener('click', function (e) {
     // clear inputs
@@ -21,48 +42,43 @@ export const projectFilter = function () {
       list.classList.remove('porjects__list--active')
     );
     currlink.classList.add('porjects__list--active');
+    console.log(currlink);
     filter(currlink);
   });
 
-  const filter = function (list) {
-    const projects = document.querySelectorAll('.projects__project');
-    projects.forEach(project => {
-      project.style.transition = 'all .5s';
-      project.classList.remove('hidden');
-    });
-    const filterType = list.dataset.type;
-    if (filterType === 'all') return;
-    projects.forEach(project => {
-      if (!project.classList.contains(`projects__project--${filterType}`)) {
-        project.classList.add('hidden');
-      }
-    });
+  const showSpinner = function () {
+    return `<span class="loader"></span>`;
   };
-
-  const projectsContainer = document.querySelector('.projects__container');
-  const btnShowMore = document.querySelector('.projects__link--more');
-  const btnShowLess = document.querySelector('.projects__link--less');
-
-  let moreLevel = 0;
 
   const showMoreProject = function (src, type, link = '#') {
     const markup = `
-  <a href="${link}" target="_blank" class="projects__project projects__project--${type} projects__project--more">
-    <div class="projects__content-hover">
-      <svg class="projects__icon">
-        <use xlink:href="./symbol-defs.svg#icon-search" />
-      </svg>
-       See Preview
-    </div>
-    <img src="${src}" alt="" class="projects__img projects__img--loading">
-  </a>
-  `;
+      <a href="${link}" target="_blank" class="projects__project--${type} projects__project--more projects__project--filter">
+        <div class="projects__content-hover">
+          <svg class="projects__icon">
+            <use xlink:href="./symbol-defs.svg#icon-search" />
+          </svg>
+           See Preview
+        </div>
+      </a>
+      `;
     projectsContainer.insertAdjacentHTML('beforeend', markup);
+    const currProject = projectsContainer.lastElementChild;
+    currProject.insertAdjacentHTML('beforeend', showSpinner());
+    const img = document.createElement('img');
+    img.setAttribute('src', src);
+    img.classList.add('projects__img', 'projects__img--loading');
+    img.onload = function () {
+      currProject.classList.add('projects__project');
+      currProject.querySelector('.loader').remove();
+      currProject.appendChild(img);
+    };
   };
 
   const showLessProjects = function () {
     moreLevel = 0;
-    const projectsMore = document.querySelectorAll('.projects__project--more');
+    const projectsMore = projectsContainer.querySelectorAll(
+      '.projects__project--more'
+    );
     projectsMore.forEach(project => {
       project.remove();
     });
@@ -90,6 +106,7 @@ export const projectFilter = function () {
         'https://sohaib-bn.github.io/myTeam/'
       );
     }
+
     if (moreLevel === 2) {
       showMoreProject(
         `${multiForm}`,
