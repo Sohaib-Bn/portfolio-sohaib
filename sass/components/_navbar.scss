@@ -1,0 +1,205 @@
+.navbar {
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  width: 100%;
+  z-index: 100;
+  animation: moveTop 0.8s ease-out;
+  @media only screen and (max-width: $break-point-meduim) {
+    padding: 6rem 8rem;
+  }
+
+  @media only screen and (max-width: $break-point-small) {
+    padding: 6rem;
+  }
+
+  @media only screen and (max-width: $break-point-smallest) {
+    padding: 6rem 5rem;
+  }
+
+  @media only screen and (max-width: $break-point-tiny) {
+    padding: 6rem 4rem;
+  }
+
+  @media only screen and (max-width: $break-point-tiny) {
+    height: 9rem;
+  }
+
+  &__items--small-screen {
+    display: none;
+    position: fixed;
+    color: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    font-size: 1.8rem;
+    z-index: 1500;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s 0.2s;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    transition: all 0.4s;
+  }
+
+  &__link {
+    &:visited,
+    &:link {
+      letter-spacing: 0.3px;
+      font-size: 1.75rem;
+      font-weight: 400;
+      font-family: inherit;
+      color: inherit;
+      margin-left: 4rem;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      span {
+        display: none;
+        @media only screen and (max-width: $break-point-verytiny) {
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
+      }
+
+      @media only screen and (max-width: $break-point-verytiny) {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 2.8rem !important;
+        padding: 1rem 2rem !important;
+        font-weight: 300;
+        display: inline-block;
+        margin-bottom: 1rem;
+        background-image: linear-gradient(
+          120deg,
+          transparent 0,
+          transparent 50%,
+          #fff 50%
+        );
+        background-size: 225%;
+        transition: all 0.4s !important;
+      }
+    }
+
+    &:hover {
+      @media only screen and (max-width: $break-point-verytiny) {
+        background-position: 100%;
+        color: var(--color-primary);
+        transform: translateX(1rem);
+      }
+    }
+
+    &::after {
+      width: 0;
+      height: 3px;
+      transition: all 0.3s;
+    }
+  }
+}
+
+.logo__img {
+  width: 17rem;
+  display: block;
+  transition: all 0.3s;
+  @media only screen and (max-width: $break-point-tiny) {
+    width: 22rem;
+  }
+}
+
+.navbar {
+  &__button,
+  &__icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $break-point-verytiny) {
+  .navbar {
+    &__items {
+      display: none;
+    }
+
+    &__items--small-screen {
+      display: flex;
+    }
+
+    &__button,
+    &__icon {
+      display: block;
+    }
+
+    &__button {
+      background-color: #fff;
+      width: 8rem;
+      height: 8rem;
+      position: fixed;
+      top: 2.3rem;
+      right: 4.3rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2000;
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.05);
+    }
+
+    &__icon,
+    &__icon::after,
+    &__icon::before {
+      width: 3.5rem;
+      height: 2px;
+      background-color: #333;
+      display: inline-block;
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__icon::before {
+      top: 1rem;
+    }
+
+    &__icon::after {
+      top: -1rem;
+    }
+
+    &__icon::after,
+    &__icon::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &__bg {
+      background-image: linear-gradient(
+        130deg,
+        rgb(37, 225, 254) 0%,
+        rgb(36, 176, 254) 54%,
+        rgb(35, 126, 253) 100%
+      );
+      width: 6rem;
+      height: 6rem;
+      position: fixed;
+      top: 2.5rem;
+      right: 5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      transform: scale(50);
+      transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+  }
+}

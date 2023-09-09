@@ -1,0 +1,127 @@
+.header {
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background-color: #ddeefd;
+    z-index: 0;
+    animation: moveRigth2 0.8s ease-in-out 0.1s;
+    animation-fill-mode: backwards;
+    @media only screen and (max-width: $break-point-small) {
+      width: 0%;
+    }
+  }
+
+  &__text {
+    width: 60%;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+
+    @media only screen and (max-width: $break-point-tiny) {
+      text-align: center;
+      margin: auto;
+    }
+    @media only screen and (max-width: $break-point-verytiny) {
+      width: 100%;
+      gap: 4rem;
+    }
+
+    .paragraphe--description {
+      @media only screen and (max-width: $break-point-small) {
+        width: 75%;
+      }
+      @media only screen and (max-width: $break-point-smallest) {
+        margin: auto;
+      }
+
+      @media only screen and (max-width: $break-point-tiny) {
+        width: 90%;
+      }
+    }
+
+    .cta {
+      @media only screen and (max-width: $break-point-smallest) {
+        justify-content: center;
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &__intro {
+    align-self: center;
+    padding: 0 10rem;
+
+    @media only screen and (max-width: $break-point-meduim) {
+      padding: 0 8rem;
+    }
+
+    @media only screen and (max-width: $break-point-small) {
+      padding: 0 6rem;
+    }
+
+    @media only screen and (max-width: $break-point-smallest) {
+      padding: 0 5rem;
+    }
+
+    @media only screen and (max-width: $break-point-tiny) {
+      padding: 0 4rem;
+    }
+  }
+
+  &__hi {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    span {
+      font-size: 5rem;
+      line-height: 0;
+    }
+    @media only screen and (max-width: $break-point-small) {
+      font-size: 3.5rem;
+    }
+    @media only screen and (max-width: $break-point-verytiny) {
+      margin-bottom: 2rem;
+      font-size: 4.3rem;
+    }
+  }
+
+  &__hero {
+    width: 46%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1;
+    animation: moveRigth2 0.8s ease-in-out;
+
+    @media only screen and (min-width: $break-point-bg) {
+      width: 43%;
+    }
+
+    @media only screen and (max-width: $break-point-small) {
+      width: 47%;
+    }
+
+    @media only screen and (max-width: $break-point-smallest) {
+      display: none;
+    }
+
+    @media only screen and (max-width: $break-point-verytiny) {
+      width: 80%;
+      margin: auto;
+      margin-top: 5rem;
+    }
+
+    &-img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

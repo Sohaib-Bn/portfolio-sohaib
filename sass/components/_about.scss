@@ -1,0 +1,142 @@
+.about__description {
+  display: grid;
+  grid-template-rows: repeat(4, max-content);
+  transform: translateY(4rem);
+  gap: 2rem;
+  justify-self: center;
+  grid-column: 2 / -1;
+  @media only screen and (max-width: $break-point-meduim) {
+    transform: translateY(3rem);
+  }
+
+  @media only screen and (max-width: $break-point-small) {
+    transform: translateY(2rem);
+  }
+
+  @media only screen and (max-width: $break-point-smallest) {
+    transform: translateY(0rem);
+  }
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    gap: 4rem;
+  }
+
+  .cta {
+    @media only screen and (max-width: $break-point-verytiny) {
+      justify-content: space-around;
+      gap: 2rem;
+    }
+  }
+}
+
+.about__hero {
+  width: 45%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+
+  @media only screen and (min-width: $break-point-bg) {
+    width: 40%;
+  }
+  @media only screen and (min-width: $break-point-lg) {
+    width: 35%;
+  }
+
+  @media only screen and (max-width: $break-point-meduim) {
+    width: 45%;
+  }
+
+  @media only screen and (max-width: $break-point-small) {
+    width: 40%;
+  }
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    position: relative;
+    width: 100%;
+  }
+  &-img {
+    width: 100%;
+    display: block;
+    @media only screen and (max-width: $break-point-verytiny) {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: max-content max-content;
+  row-gap: 1rem;
+  align-items: start;
+
+  @media only screen and (max-width: $break-point-verytiny) {
+    display: grid;
+    margin: auto;
+    column-gap: 7rem;
+  }
+
+  &__container {
+    display: flex;
+    flex: 0 0 100%;
+    align-items: center;
+    gap: 0.5rem;
+
+    @media only screen and (max-width: $break-point-tiny) {
+      gap: 1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    @media only screen and (max-width: $break-point-small) {
+      font-size: 1.3rem;
+    }
+
+    @media only screen and (max-width: $break-point-tiny) {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+
+  &__data {
+    text-align: left;
+    @media only screen and (max-width: $break-point-small) {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    @media only screen and (max-width: $break-point-tiny) {
+      font-size: 1.6rem;
+      margin: 0;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  color: var(--color-grey-1);
+  font-size: 1.4rem;
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey-dark-1);
+    transition: all 0.3s;
+
+    @media only screen and (max-width: $break-point-verytiny) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__link:hover &__icon {
+    transform: scale(1.1);
+    fill: var(--color-primary);
+    box-shadow: var(--box-shadow-light-1);
+  }
+}

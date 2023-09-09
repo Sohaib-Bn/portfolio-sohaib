@@ -1,0 +1,149 @@
+.contact {
+  &__text {
+    display: grid;
+    grid-template-rows: repeat(5, max-content);
+    align-content: space-between;
+    grid-column: 2 / -1;
+    @media only screen and (max-width: $break-point-verytiny) {
+      gap: 3rem;
+      text-align: center;
+    }
+  }
+  &__form {
+    flex: 0 0 40%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 6rem;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    @media only screen and (max-width: $break-point-tiny) {
+      flex: 0 0 45%;
+      padding: 3rem 5rem;
+    }
+
+    @media only screen and (max-width: $break-point-verytiny) {
+      flex: 0 0 40%;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 0.1rem;
+    cursor: text;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0%;
+      height: 0.5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: var(--color-primary);
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &--fName {
+      grid-column: 1 / 2;
+    }
+
+    &--lName {
+      grid-column: 2 / 3;
+    }
+
+    &--email {
+      grid-column: 1 / -1;
+    }
+
+    &--message {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__label {
+    position: relative;
+    z-index: 15;
+    font-size: 1.2rem;
+    @media only screen and (max-width: $break-point-verytiny) {
+      font-size: 1.35rem;
+    }
+    color: var(--color-grey-dark--1);
+    opacity: 0.85;
+    transform: translate(1rem, 2.1rem);
+    cursor: text;
+    transition: all 0.3s;
+  }
+
+  &__input {
+    border: none;
+    padding: 1rem;
+    padding-top: 0;
+    font-family: inherit;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 10;
+    @media only screen and (max-width: $break-point-verytiny) {
+      font-size: 1.35rem;
+    }
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+}
+
+.icon--send {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.icon--check {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+.contact__err {
+  position: relative;
+  z-index: 5;
+  letter-spacing: 0.3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  transform: translate(1rem, 1.8rem);
+  transition: all 0.3s;
+}
+
+.cta--lg-screen {
+  @media only screen and (max-width: $break-point-tiny) {
+    display: none !important;
+  }
+}
+.contact__send-message--sm-screen {
+  display: none;
+
+  @media only screen and (max-width: $break-point-small) {
+    display: flex;
+    justify-self: flex-start;
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  // @media only screen and (max-width: $break-point-tiny) {
+  //   grid-column: 1 / 2;
+  // }
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./src/img/favicon-32x32.png">
+  <link rel="stylesheet" href="/sass/main.scss">
+  <script type="module" src="/src/js/controller.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js">
+  </script>
+  <title>Sohaib | Portfolio</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <img class="logo__img" src="./src/img/logo.svg" alt="">
+      <div class="navbar__button">
+        <span class="navbar__icon"></span>
+      </div>
+      <div class="navbar__bg hidden-2"></div>
+      <ul class="navbar__items">
+        <li class="navbar__list"><a href="#about" class="navbar__link "><span>01</span> About</a></li>
+        <li class="navbar__list"><a href="#projects" class="navbar__link"><span>02</span> Projects</a></li>
+        <li class="navbar__list"><a href="#testimonials" class="navbar__link"><span>03</span> Testimonials</a></li>
+        <li class="navbar__list"><a href="#services" class="navbar__link"><span>04</span> Services</a></li>
+        <li class="navbar__list"><a href="#contact" class="navbar__link btn--contact"><span>05</span> Contact Me</a></li>
+      </ul>
+      <ul class="navbar__items--small-screen hidden-3">
+        <li class="navbar__list"><a href="#about" class="navbar__link "><span>01</span> About</a></li>
+        <li class="navbar__list"><a href="#projects" class="navbar__link"><span>02</span> Projects</a></li>
+        <li class="navbar__list"><a href="#testimonials" class="navbar__link"><span>03</span> Testimonials</a></li>
+        <li class="navbar__list"><a href="#services" class="navbar__link"><span>04</span> Services</a></li>
+        <li class="navbar__list"><a href="#contact" class="navbar__link btn--contact"><span>05</span> Contact Me</a></li>
+      </ul>
+    </nav>
+    <div class="header__intro">
+      <div class="header__text">
+        <div>
+          <h2 class="header__hi animation--moveRight">Hi, it's me <span>👋</span></h2>
+          <h1 class="heading--primary animation--moveLeft">I'm Sohaib Benyamna <br> a <span class="hightlight--1">Web Developer</span></h1>
+        </div>
+
+        <p class="paragraphe--description animation--moveLeft">You can call me sodev :) because I'm a passionate web developer who has transformed from an enthusiast to an expert, specializing in web development, and user-centric solutions. My commitment to innovation and problem-solving drives my pursuit of excellence in web development."
+        </p>
+
+        <div class="animation--moveDown cta">
+          <a href="#projects" class="btn btn--fill ">See My Portfolio</a>
+          <a href="#contact" class="btn btn--outline animation--toggle-infinite">Hire Me</a>
+        </div>
+      </div>
+      <div class="header__hero animation--moveRight">
+        <img src="./src/img/hero-1.png" alt="hero" class="header__hero-img">
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="partners section section--hidden u-section-padding">
+      <h3 class="partners__heading">
+        Proud marketing <span class="hightlight--1">partners</span> with
+        <div class="partners__logos">
+          <img src="./src/img/google.svg" alt="" class="partners__logo">
+          <img src="./src/img/amazon.svg" alt="" class="partners__logo">
+          <img src="./src/img/spotify.svg" alt="" class="partners__logo">
+          <img src="./src/img/noxis.svg" alt="" class="partners__logo">
+        </div>
+      </h3>
+    </section>
+    <section class="about u-section-padding" id="about">
+      <div class="about__hero side--left side--left-hidden">
+        <img src="./src/img/hero-2.gif" alt="hero" class="about__hero-img">
+      </div>
+      <div class="about__description side--right side--right-hidden">
+        <div>
+          <h3 class="heading--secondary">
+            About me
+          </h3>
+          <h1 class="heading--tertairy ">
+            More Then 3+ Years Programing <br> Experience
+          </h1>
+        </div>
+        <p class="paragraphe--description">I am Sohaib Benyamna a web developer with a deep passion for crafting exceptional digital experiences. My journey in web development has been driven by an insatiable curiosity and a desire to create meaningful solutions that make a difference. Over the years, I've honed my skills in Front-end, Back-end development and UI & UX and collaborated on diverse projects that have enriched my knowledge and fueled my enthusiasm for this ever-evolving field.</p>
+
+        <div class="info">
+          <div class="info__container">
+            <h4 class="info__label">Name:</h4>
+            <p class="info__data paragraphe--description">Sohaib Benyamna</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Location:</h4>
+            <p class="info__data paragraphe--description">Algeria</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Email:</h4>
+            <p class="info__data paragraphe--description">Sohaibbusinessbn@gmail.com</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Office:</h4>
+            <p class="info__data paragraphe--description">Algeria, Tipaza</p>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a href="#contact" class="btn btn--fill">Hire me <span>:)</span></a>
+          <div class="social">
+            &#8212;
+            <p>Follow me:</p>
+
+            <a href="https://www.instagram.com/benyamnasohaib/" target="_blank" class="social__link">
+              <svg class="social__icon ">
+                <use xlink:href="./src/img/symbol-defs.svg#icon-instagram" />
+              </svg>
+            </a>
+            <a href="https://github.com/Sohaib-Bn" target="_blank" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="./src/img/symbol-defs.svg#icon-github" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/sohaib-benyamna-a67618274/" target="_blank" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="./src/img/symbol-defs.svg#icon-linkedin" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/SohaibBeny61902" target="_blank" class="social__link">
+              <svg class="social__icon">
+                <use xlink:href="./src/img/symbol-defs.svg#icon-twitter" />
+              </svg>
+            </a>
+          </div>
+        </div>
+    </section>
+
+    <section class="skills section section--hidden u-section-padding">
+      <div class="skills__content">
+        <div>
+          <h3 class="heading--secondary">
+            Skills set
+          </h3>
+          <h1 class="heading--tertairy ">
+            Creative and Professional Skills <br> Experience on Few Area
+          </h1>
+        </div>
+        <p class="paragraphe--description">This is just a snapshot of my skills in web development. I am committed to expanding my knowledge and adapting to emerging technologies to deliver cutting-edge solutions.</p>
+        <div class="cta cta--lg-screen ">
+          <a href="#projects" class="btn btn--fill">See My Projects</a>
+        </div>
+      </div>
+      <div class="skills__statistic ">
+        <div class="skills__skill">
+          <h4 class="skills__title">Web Development</h4>
+          <div class="skills__percantage skills__percantage--1 percantage-animate">
+
+          </div>
+          <div class="skills__number">
+            75%
+          </div>
+        </div>
+
+        <div class="skills__skill">
+          <h4 class="skills__title">Front-end Development</h4>
+          <div class="skills__percantage skills__percantage--2 percantage-animate">
+
+          </div>
+          <div class="skills__number">
+            90%
+          </div>
+        </div>
+
+        <div class="skills__skill">
+          <h4 class="skills__title">UI Design & UX Development</h4>
+          <div class="skills__percantage skills__percantage--3 percantage-animate">
+          </div>
+          <div class="skills__number">
+            67%
+          </div>
+        </div>
+
+        <div class="skills__skill">
+          <h4 class="skills__title">Deployment & UX Version Control</h4>
+          <div class="skills__percantage skills__percantage--4 percantage-animate">
+
+          </div>
+          <div class="skills__number">
+            80%
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section section--hidden u-section-padding">
+      <div class="cta__box">
+        <div class="cta__text">
+          <h5 class="cta__heading--primary">Have eny Project in Mind</h5>
+          <h3 class="cta__heading--secondary">Don't Be Hesitate To Contact <br> With Me</h3>
+        </div>
+
+        <div class="cta__btn">
+          <a href="#contact" class="btn btn--fill">Contact Me <span>:)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section section--hidden u-section-padding" id="projects">
+      <h3 class="heading--secondary">
+        Projects
+      </h3>
+      <h1 class="heading--tertairy">
+        Some of my Recents Works
+      </h1>
+      <ul class="projects__nav">
+        <li class="projects__list u-border-bottom--left porjects__list--active" data-type="all">All</li>
+        <li class="projects__list u-border-bottom--left" data-type="marketing">Marketing Pages</li>
+        <li class="projects__list u-border-bottom--left" data-type="portfolio">Portfolios</li>
+        <li class="projects__list u-border-bottom--left" data-type="app">Apps</li>
+      </ul>
+
+      <div class="projects__container">
+        <a href="https://natours-sohaib.netlify.app/" target="_blank" class="projects__project projects__project--marketing" data-delay="0">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview <br>
+          </div>
+          <img src="./src/img/natours.svg" alt="" class="projects__img">
+        </a>
+        <a href="https://bankist-sohaib.netlify.app/" target="_blank" class="projects__project projects__project--marketing" data-delay="0.2">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview
+          </div>
+          <img src="./src/img/bankist.svg" alt="" class="projects__img">
+        </a>
+        <a href="https://forkify-sohaib-benyamna.netlify.app/" target="_blank" class="projects__project projects__project--app" data-delay="0.4">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview
+          </div>
+          <img src="./src/img/forkify.svg" alt="" class="projects__img">
+        </a>
+        <a href="https://portfolio-sohaib.netlify.app/" target="_blank" class="projects__project projects__project--portfolio" data-delay="0.6">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview
+          </div>
+          <img src="./src/img/portfolio-1.png" alt="" class="projects__img">
+        </a>
+        <a href="https://sohaib-bn.github.io/scoot-multpi/" target="_blank" class="projects__project projects__project--marketing" data-delay="0.8">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview
+          </div>
+          <img src="./src/img/scoot.svg" alt="" class="projects__img">
+        </a>
+        <a href="https://sohaib-bn.github.io/Bonsai/" target="_blank" class="projects__project projects__project--marketing" data-delay="1">
+          <div class="projects__content-hover">
+            <svg class="projects__icon">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+            </svg>
+            See Preview
+          </div>
+          <img src="./src/img/bonsai.svg" alt="" class="projects__img">
+        </a>
+        <!-- <div class="spinner hidden"></div> -->
+      </div>
+
+      <a href="#" class="projects__link projects__link--more">Show more <span>&#8594;</span></a>
+      <a href="#" class="projects__link projects__link--less">Show less <span>&#8594;</span></a>
+
+    </section>
+
+    <section class="testimonials section section--hidden u-section-padding" id="testimonials">
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <img src="./src/img/user-1.jpg" alt="" class="testimonial__user-img">
+            <p class="testimonial__text">
+              "Working with Sohaib was an absolute pleasure! Their attention to detail and expertise in web development transformed our outdated website into a modern."
+            </p>
+            <div class="testimonial__details">
+              <h4 class="testimonial__name">Albert Ailson</h4>
+              <h4 class="testimonial__location">London, UK</h4>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <img src="./src/img/user-3.jpg" alt="" class="testimonial__user-img">
+            <p class="testimonial__text">
+              "Sohaib is an exceptional web developer and a true team player. Their ability to tackle complex technical challenges have been invaluable to our projects."
+            </p>
+            <div class="testimonial__details">
+              <h4 class="testimonial__name">anna bishop</h4>
+              <h4 class="testimonial__location">San Francisco, USA</h4>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <img src="./src/img/user-2.jpg" alt="" class="testimonial__user-img">
+            <p class="testimonial__text">
+              "I can't thank Sodev enough for the incredible website they created. Navigating the site is a breeze, and the visually stunning design is a feast for the eyes."
+            </p>
+            <div class="testimonial__details">
+              <h4 class="testimonial__name">lawrence ruiz</h4>
+              <h4 class="testimonial__location">Lisbon, Portugal</h4>
+            </div>
+          </div>
+        </div>
+        <div class="slide__bnts-control">
+          <button class="slide__btn slide__btn--next">&rarr;</button>
+          <button class="slide__btn slide__btn--prev">&larr;</button>
+        </div>
+        <div class="slide__dots">
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services section section--hidden u-section-padding" id="services">
+      <h3 class="heading--secondary">
+        Services
+      </h3>
+      <h1 class="heading--tertairy">
+        I can help you in
+      </h1>
+
+      <div class="services__container">
+        <div class="u-animate-box">
+          <div class="services__service services__service--1" data-delay="0">
+            <img src="./src/img/webdev.gif" alt="" class="services__icon">
+            <h3 class="services__title">
+              Front & Back end
+            </h3>
+            <p class="services__description">
+              Crafting captivating user interfaces and seamless interactions and building robust server-side systems for data management and functionality.
+            </p>
+          </div>
+        </div>
+
+        <div class="u-animate-box">
+          <div class="services__service services__service--2" data-delay="0.2">
+            <img src="./src/img/webdes.gif" alt="" class="services__icon">
+            <h3 class="services__title">
+              Web Design
+            </h3>
+            <p class="services__description">
+              Transforming ideas into visually compelling digital masterpieces and bringing creativity and functionality together for impactful web experiences.
+            </p>
+          </div>
+        </div>
+
+        <div class="u-animate-box">
+          <div class="services__service services__service--3" data-delay="0.4">
+            <img src="./src/img/landing.gif" alt="" class="services__icon">
+            <h3 class="services__title">
+              UI & UX
+            </h3>
+            <p class="services__description">
+              Crafting user interfaces that captivate and engage and enhancing user experiences through intuitive design and seamless interactions.
+            </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="contact section u-section-padding" id="contact">
+
+      <form class="contact__form ">
+        <div class="contact__field contact__field--fName">
+          <label class="contact__label" for="fName">First Name</label>
+          <input name="fName" id="fName" type="text" class="contact__input contact__input--fName" autocomplete="off">
+        </div>
+        <div class="contact__field contact__field--lName">
+          <label class="contact__label" for="lName">Last Name</label>
+          <input name="lName" id="lName" type="text" class="contact__input contact__input--lName" autocomplete="off">
+        </div>
+        <div class="contact__field contact__field--email">
+          <label class="contact__label" for="email">Email Address</label>
+          <input name="email" id="email" type="text" class="contact__input contact__input--email" autocomplete="off">
+        </div>
+        <div class="contact__field contact__field--message">
+          <label class="contact__label" for="message">Message</label>
+          <textarea name="message" id="message" class="contact__input contact__input--message" id="message" cols="30" rows="10" autocomplete="off"></textarea>
+        </div>
+        <div class="cta contact__send-message--sm-screen">
+          <a href="#" class="btn btn--fill btn--submit btn--submit-checked">
+            Send Message
+            <svg class="icon--send">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-paper-plane" />
+            </svg>
+          </a>
+        </div>
+      </form>
+
+      <div class="contact__text ">
+        <div>
+          <h3 class="heading--secondary">Contact me</h3>
+          <h1 class="heading--tertairy">Got a Poject ? Lets Talk <br> Don't Be Hesitate </h1>
+        </div>
+        <p class="paragraphe--description">
+          I'm excited to connect with you and explore opportunities for collaboration. Whether you have a project in mind, want to discuss web development trends, or simply want to say hello.
+          I typically respond to emails within 24 hours, and you can also reach me through my social media profiles.
+        </p>
+        <div class="info">
+          <div class="info__container">
+            <h4 class="info__label">Name:</h4>
+            <p class="info__data paragraphe--description">Sohaib Benyamna</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Location:</h4>
+            <p class="info__data paragraphe--description">Algeria</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Email:</h4>
+            <p class="info__data paragraphe--description">Sohaibbusinessbn@gmail.com</p>
+          </div>
+          <div class="info__container">
+            <h4 class="info__label">Office:</h4>
+            <p class="info__data paragraphe--description">Algeria, Tipaza</p>
+          </div>
+        </div>
+        <div class="cta cta--lg-screen  ">
+          <a href="#" class="btn btn--fill btn--submit btn--submit-checked">
+            Send Message
+            <svg class="icon--send">
+              <use xlink:href="./src/img/symbol-defs.svg#icon-paper-plane" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <ul class="social">
+      <a href="https://www.instagram.com/benyamnasohaib/" target="_blank" class="social__link">
+        <svg class="social__icon ">
+          <use xlink:href="./src/img/symbol-defs.svg#icon-instagram" />
+        </svg>
+      </a>
+      <a href="https://github.com/Sohaib-Bn" target="_blank" class="social__link">
+        <svg class="social__icon">
+          <use xlink:href="./src/img/symbol-defs.svg#icon-github" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sohaib-benyamna-a67618274/" target="_blank" class="social__link">
+        <svg class="social__icon">
+          <use xlink:href="./src/img/symbol-defs.svg#icon-linkedin" />
+        </svg>
+      </a>
+      <a href="https://twitter.com/SohaibBeny61902" target="_blank" class="social__link">
+        <svg class="social__icon">
+          <use xlink:href="./src/img/symbol-defs.svg#icon-twitter" />
+        </svg>
+      </a>
+    </ul>
+
+    <img src="./src/img/logo-light.svg" alt="" class="footer__logo">
+
+    <p class="copyright">
+      &copy; <script>
+        document.write(new Date().getFullYear())
+      </script> Copy right by Sohaib Benyamna
+    </p>
+  </footer>
+</body>
+
+</html>

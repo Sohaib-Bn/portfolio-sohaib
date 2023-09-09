@@ -1,0 +1,112 @@
+@keyframes moveRigth {
+  0% {
+    opacity: 0;
+    transform: translateX(9rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRigth2 {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-9rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes toggleBtn {
+  0% {
+    transform: translateY(-0.3rem);
+  }
+
+  50% {
+    transform: translateY(0.3rem);
+  }
+
+  100% {
+    transform: translateY(-0.3rem);
+  }
+}
+
+@keyframes smile {
+  0% {
+    transform: translateX(0.3rem);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0.3rem);
+  }
+}
+
+.animation--moveRight {
+  animation: moveRigth 1s ease-in-out;
+}
+
+.animation--moveLeft {
+  animation: moveLeft 1s ease-in-out;
+}
+
+.animation--moveDown {
+  animation: moveBottom 1s ease-in-out 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.animation--toggle-infinite {
+  animation: toggleBtn 2.5s infinite;
+}

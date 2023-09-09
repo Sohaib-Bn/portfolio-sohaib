@@ -1,0 +1,106 @@
+.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.section {
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.side--left {
+  transition: all 1s;
+}
+
+.side--right {
+  transition: all 1s 0.2s;
+}
+
+.side--right-hidden {
+  opacity: 0;
+  transform: translate(20rem, 4rem);
+  @media only screen and (max-width: $break-point-tiny) {
+    transform: translateY(8rem);
+  }
+}
+
+.side--left-hidden {
+  opacity: 0;
+  transform: translateX(-20rem);
+  @media only screen and (max-width: $break-point-tiny) {
+    transform: translateY(8rem);
+  }
+}
+
+.percantage-animate::after {
+  width: 0 !important;
+}
+
+.popup {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.dot--active {
+  width: 1.5rem;
+  border-radius: 1rem;
+  background-color: var(--color-primary);
+}
+
+.contact__label--animate {
+  transform: translate(1rem, -0.1rem);
+  font-size: 1.15rem;
+  opacity: 0.5;
+  @media only screen and (max-width: $break-point-verytiny) {
+    font-size: 1.2rem;
+  }
+}
+
+.contact__field--active {
+  &::after {
+    width: 100%;
+  }
+}
+
+.contact__field--err {
+  border-color: rgba(247, 56, 48, 0.5);
+}
+
+.contact__label--err {
+  color: rgba(247, 56, 48, 0.7);
+}
+
+.contact__err--hidden {
+  opacity: 0;
+  transform: translate(1rem, 0);
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-2 {
+  transform: scale(0);
+}
+
+.switchClose {
+  background-color: transparent;
+  &::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}
+
+.hidden-3 {
+  opacity: 0;
+  visibility: hidden;
+  left: -20rem;
+}

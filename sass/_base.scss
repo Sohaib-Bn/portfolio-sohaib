@@ -1,0 +1,93 @@
+:root {
+  --color-primary: #0189ff;
+  --color-primary-dark: #045ba7;
+  --color-primary-light: #7cbef8;
+
+  --color-secondary: #f73830;
+
+  --color-tertiary: #232d39;
+  --color-tertiary-light: #404952;
+
+  --color-grey-light-1: #f8f9fd;
+  --color-grey-light-2: #d2dfeb;
+
+  --color-grey-dark-1: #868e96;
+  --color-grey-dark-2: #444;
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-linear-gradient-primary: linear-gradient(
+    130deg,
+    rgba(37, 225, 254, 0.98) 0%,
+    rgba(36, 176, 254, 0.85) 54%,
+    rgba(35, 126, 253, 0.7) 100%
+  );
+  --color-linear-gradient-secondary: linear-gradient(
+    130deg,
+    rgba(255, 211, 36, 0.99) 0%,
+    rgba(254, 187, 36, 0.9) 54%,
+    rgba(253, 163, 35, 0.7) 100%
+  );
+  --color-linear-gradient-tertiary: linear-gradient(
+    130deg,
+    rgba(49, 214, 162, 0.98) 10%,
+    rgba(42, 197, 106, 0.85),
+    rgba(2, 179, 21, 0.7)
+  );
+
+  --box-shadow-light-1: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  --box-shadow-light-2: 0 2rem 4rem rgba(0, 0, 0, 0.05);
+  --box-shadow-light-3: 0 2rem 4rem rgba(0, 0, 0, 0.15);
+  --box-shadow-light-4: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+/////////////////////////////////////////////
+/// BREAK POINTS
+
+$break-point-verytiny: 31.25em;
+$break-point-tiny: 37.5em;
+$break-point-smallest: 42.8125em;
+$break-point-small: 54.6875em;
+$break-point-meduim: 66.25em;
+$break-point-meduimPlus: 70.4rem;
+$break-point-meduimPlusPlus: 76.25rem;
+$break-point-bg: 93.75rem;
+$break-point-lg: 100rem;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $break-point-meduimPlus) {
+    font-size: 55%;
+  }
+
+  @media only screen and (max-width: $break-point-meduim) {
+    font-size: 47%;
+  }
+
+  @media only screen and (max-width: $break-point-small) {
+    font-size: 40%;
+  }
+
+  @media only screen and (max-width: $break-point-smallest) {
+    font-size: 35%;
+  }
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--color-grey-dark-2);
+  background-color: var(--color-white);
+}

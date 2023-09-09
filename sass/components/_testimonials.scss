@@ -1,0 +1,106 @@
+.slider {
+  position: relative;
+  width: 80%;
+  height: 35rem;
+  margin: auto;
+  font-weight: 400;
+  overflow: hidden;
+  @media only screen and (max-width: $break-point-verytiny) {
+    width: 100%;
+  }
+}
+.slide {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  transition: all 0.5s;
+
+  &__btn {
+    border: none;
+    font-size: 3.5rem;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    color: var(--color-grey-dark-1);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__btn--next {
+    right: 3px;
+    &:hover {
+      transform: translateX(3px);
+    }
+  }
+
+  &__btn--prev {
+    left: 3px;
+    &:hover {
+      transform: translateX(-3px);
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__dot {
+    border: none;
+    border-radius: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+    background-color: var(--color-grey-dark-1);
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}
+
+.testimonial {
+  width: 75%;
+  @media only screen and (max-width: $break-point-verytiny) {
+    width: 85%;
+  }
+
+  &__user-img {
+    margin: auto;
+    width: 8rem;
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+  }
+
+  &__text {
+    font-size: 1.9rem;
+    line-height: 1.7;
+    margin-bottom: 3.5rem;
+    @media only screen and (max-width: $break-point-verytiny) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__name {
+    font-size: 1.4rem;
+    color: var(--color-grey-dark-1);
+  }
+
+  &__location {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+  }
+}
