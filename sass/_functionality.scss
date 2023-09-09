@@ -50,12 +50,12 @@
   background-color: var(--color-primary);
 }
 
-.contact__label--animate {
+.contact__label--active {
   transform: translate(1rem, -0.1rem);
   font-size: 1.15rem;
   opacity: 0.5;
   @media only screen and (max-width: $break-point-verytiny) {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 

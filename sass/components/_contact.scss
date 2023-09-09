@@ -28,6 +28,7 @@
 
     @media only screen and (max-width: $break-point-verytiny) {
       flex: 0 0 40%;
+      gap: 7rem;
     }
   }
 
@@ -48,6 +49,9 @@
       left: 0;
       background-color: var(--color-primary);
       transition: all 0.5s;
+      @media only screen and (max-width: $break-point-verytiny) {
+        height: 1px;
+      }
     }
 
     &:hover::after {
@@ -107,12 +111,10 @@
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
-}
-
-.icon--check {
-  width: 2rem;
-  height: 2rem;
-  fill: currentColor;
+  @media only screen and (max-width: $break-point-tiny) {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
 
 .contact__err {
@@ -126,6 +128,10 @@
   color: var(--color-secondary);
   transform: translate(1rem, 1.8rem);
   transition: all 0.3s;
+  @media only screen and (max-width: $break-point-verytiny) {
+    font-size: 1.1rem;
+    transform: translate(1rem, 2.7rem);
+  }
 }
 
 .cta--lg-screen {

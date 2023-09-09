@@ -1,5 +1,5 @@
 const contactForm = document.querySelector('.contact__form');
-const btnSubmit = document.querySelector('.btn--submit');
+const btnSubmit = document.querySelectorAll('.btn--submit');
 const inputs = document.querySelectorAll('.contact__input');
 const fields = document.querySelectorAll('.contact__field');
 
@@ -11,7 +11,7 @@ export const contact = function () {
       const field = label.closest('.contact__field');
       field.classList.remove('contact__field--active');
       if (field.querySelector('.contact__input').value === '') {
-        label.classList.remove('contact__label--animate');
+        label.classList.remove('contact__label--active');
       }
     });
 
@@ -21,7 +21,7 @@ export const contact = function () {
     const label = field.querySelector('.contact__label');
     input.focus();
     field.classList.add('contact__field--active');
-    label.classList.add('contact__label--animate');
+    label.classList.add('contact__label--active');
   });
 
   document.addEventListener('click', function (e) {
@@ -32,7 +32,7 @@ export const contact = function () {
         input.blur();
         field.classList.remove('contact__field--active');
         if (field.querySelector('.contact__input').value === '') {
-          label.classList.remove('contact__label--animate');
+          label.classList.remove('contact__label--active');
         }
       });
     }
@@ -76,24 +76,28 @@ export const contact = function () {
 
   const checkInputs = inputs => inputs.every(input => input.value !== '');
 
-  btnSubmit.addEventListener('click', function (e) {
-    e.preventDefault();
-    // clear err
-    inputs.forEach(input => {
-      clearInput(input);
-    });
-    // show err
-    if (!checkInputs([...inputs])) {
+  console.log(btnSubmit);
+
+  btnSubmit.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      // clear err
       inputs.forEach(input => {
-        if (input.value === '') {
-          showErr(input);
-        }
+        clearInput(input);
       });
-      return;
-    }
-    emailSend();
-    contactForm.reset();
-    return false;
+      // show err
+      if (!checkInputs([...inputs])) {
+        inputs.forEach(input => {
+          if (input.value === '') {
+            showErr(input);
+          }
+        });
+        return;
+      }
+      emailSend();
+      contactForm.reset();
+      return false;
+    });
   });
 
   // SENDE EMAIL
