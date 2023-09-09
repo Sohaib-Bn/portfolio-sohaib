@@ -1,3 +1,10 @@
+import blogr from 'url:../img/blogr.svg';
+import bankistApp from 'url:../img/bankist-app.png';
+import myTeam from 'url:../img/my-team.png';
+import multiForm from 'url:../img/multiform.png';
+import nexter from 'url:../img/nexter.png';
+import diceGame from 'url:../img/dice-game.png';
+
 const projectsNav = document.querySelector('.projects__nav');
 
 export const projectFilter = function () {
@@ -43,7 +50,7 @@ export const projectFilter = function () {
   <a href="${link}" target="_blank" class="projects__project projects__project--${type} projects__project--more">
     <div class="projects__content-hover">
       <svg class="projects__icon">
-        <use xlink:href="./src/img/symbol-defs.svg#icon-search" />
+        <use xlink:href="./symbol-defs.svg#icon-search" />
       </svg>
        See Preview
     </div>
@@ -68,34 +75,34 @@ export const projectFilter = function () {
     moreLevel++;
     if (moreLevel === 1) {
       showMoreProject(
-        './src/img/blogr.svg',
+        `${blogr}`,
         'marketing',
         'https://sohaib-bn.github.io/bogr/'
       );
       showMoreProject(
-        './src/img/bankist-app.png',
+        `${bankistApp}`,
         'app',
         'https://bankist-sohaib.netlify.app/bank.html'
       );
       showMoreProject(
-        './src/img/my-team.png',
+        `${myTeam}`,
         'marketing',
         'https://sohaib-bn.github.io/myTeam/'
       );
     }
     if (moreLevel === 2) {
       showMoreProject(
-        './src/img/multiform.png',
+        `${multiForm}`,
         'app',
         'https://sohaib-bn.github.io/multi-form-steps/'
       );
       showMoreProject(
-        './src/img/nexter.png',
+        `${nexter}`,
         'marketing',
         'https://sohaib-bn.github.io/Nexter/'
       );
       showMoreProject(
-        './src/img/dice-game.png',
+        `${diceGame}`,
         'app',
         'https://sohaib-bn.github.io/dicegame/'
       );
