@@ -17,7 +17,7 @@
   }
 
   @media only screen and (max-width: $break-point-verytiny) {
-    height: 80vh;
+    height: 77vh;
     gap: 10rem;
   }
 
@@ -46,7 +46,7 @@
     position: relative;
     z-index: 1;
 
-    @media only screen and (max-width: $break-point-tiny) {
+    @media only screen and (max-width: $break-point-smallest) {
       text-align: center;
       margin: auto;
     }
