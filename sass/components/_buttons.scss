@@ -38,7 +38,7 @@
   &:visited {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.3rem;
     position: relative;
     z-index: 10;
     text-decoration: none;
@@ -79,6 +79,12 @@
       background-color: var(--color-secondary);
     }
   }
+}
+
+.icon--chevron {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: currentColor;
 }
 
 /////////////////////////////////////////////////////////////////////////////

@@ -133,8 +133,8 @@ export const contact = function () {
     }).then(message => {
       if (message === 'OK') {
         swal({
-          title: `Hi ${name}`,
-          text: 'Wait a respond within 24 hours',
+          title: `Hi ${name} 👋`,
+          text: 'We recieved your message',
           icon: 'success',
         });
       }

@@ -79,6 +79,7 @@ export const navbarFunctionality = function () {
   /////////////////////////////////////////////////////////////////
   // NAVBAR STICKY
   const navHeight = navbar.getBoundingClientRect().height;
+
   const navSticky = function (entries) {
     entries.forEach(entrie => {
       if (!entrie.isIntersecting) navbar.classList.add('sticky');
@@ -88,9 +89,8 @@ export const navbarFunctionality = function () {
 
   const headerObserver = new IntersectionObserver(navSticky, {
     root: null,
-    threshold: 0,
+    threshold: [0],
     rootMargin: `-${navHeight}px`,
   });
-
   headerObserver.observe(header);
 };
