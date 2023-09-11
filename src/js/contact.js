@@ -4,7 +4,7 @@ const inputs = document.querySelectorAll('.contact__input');
 const fields = document.querySelectorAll('.contact__field');
 
 export const contact = function () {
-  contactForm.addEventListener('click', function (e) {
+  const activateFocusedInput = function (e) {
     // CLEAR
     const labels = document.querySelectorAll('.contact__label');
     labels.forEach(label => {
@@ -14,14 +14,25 @@ export const contact = function () {
         label.classList.remove('contact__label--active');
       }
     });
-
     const field = e.target.closest('.contact__field');
     if (!field) return;
     const input = field.querySelector('.contact__input');
-    const label = field.querySelector('.contact__label');
     input.focus();
-    field.classList.add('contact__field--active');
-    label.classList.add('contact__label--active');
+    const label = field.querySelector('.contact__label');
+    if (input === document.activeElement) {
+      field.classList.add('contact__field--active');
+      label.classList.add('contact__label--active');
+    }
+  };
+
+  window.addEventListener('keyup', function (e) {
+    if (e.key === 'Tab') {
+      activateFocusedInput(e);
+    }
+  });
+
+  contactForm.addEventListener('click', function (e) {
+    activateFocusedInput(e);
   });
 
   document.addEventListener('click', function (e) {
@@ -93,7 +104,6 @@ export const contact = function () {
         return;
       }
       emailSend();
-      contactForm.reset();
       return false;
     });
   });
@@ -131,11 +141,18 @@ export const contact = function () {
       Subject: `New client ${email.value}`,
       Body: generateUserData(),
     }).then(message => {
+      contactForm.reset();
       if (message === 'OK') {
         swal({
           title: `Hi ${name} 👋`,
-          text: 'We recieved your message',
+          text: 'I recieved your message, wait a respond',
           icon: 'success',
+        });
+      } else {
+        swal({
+          title: `Sorry 😔`,
+          text: 'Problem with the server try again',
+          icon: 'error',
         });
       }
     });
