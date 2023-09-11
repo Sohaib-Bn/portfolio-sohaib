@@ -4,6 +4,7 @@
   padding: 5rem 10rem;
   background-color: var(--color-tertiary);
   @media only screen and (max-width: $break-point-verytiny) {
+    column-gap: 2rem;
     padding: 5rem;
   }
 
