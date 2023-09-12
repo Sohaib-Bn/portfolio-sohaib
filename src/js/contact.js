@@ -133,11 +133,10 @@ export const contact = function () {
     const name =
       fName.value.toLowerCase().slice(0, 1).toUpperCase() +
       fName.value.slice(1);
-    console.log(name);
     Email.send({
-      SecureToken: '572dece7-992c-4b7e-82b4-8ccbb94cef6f Please take',
+      SecureToken: '4b052543-b667-4c4d-ae5a-cb8b4c07c425',
       To: 'sohaibbenyamna@gmail.com',
-      From: 'sohaibbenyamna@gmail.com',
+      From: 'info@sodev.live',
       Subject: `New client ${email.value}`,
       Body: generateUserData(),
     }).then(message => {
@@ -151,7 +150,8 @@ export const contact = function () {
       } else {
         swal({
           title: `Sorry 😔`,
-          text: 'Problem with the server try again',
+          // text: 'Problem with the server try again',
+          text: message,
           icon: 'error',
         });
       }
