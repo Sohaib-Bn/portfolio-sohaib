@@ -7,6 +7,10 @@ import diceGame from 'url:../img/dice-game.png';
 
 const projectsNav = document.querySelector('.projects__nav');
 
+export const showSpinner = function () {
+  return `<span class="loader"></span>`;
+};
+
 export const projectFilter = function () {
   const projectsContainer = document.querySelector('.projects__container');
   const btnShowMore = document.querySelector('.projects__link--more');
@@ -45,10 +49,6 @@ export const projectFilter = function () {
     console.log(currlink);
     filter(currlink);
   });
-
-  const showSpinner = function () {
-    return `<span class="loader"></span>`;
-  };
 
   const showMoreProject = function (src, type, link = '#') {
     const markup = `

@@ -1,7 +1,10 @@
+import { showSpinner } from './project';
+console.log(showSpinner);
 const contactForm = document.querySelector('.contact__form');
 const btnSubmit = document.querySelectorAll('.btn--submit');
 const inputs = document.querySelectorAll('.contact__input');
 const fields = document.querySelectorAll('.contact__field');
+const overlay = document.querySelector('.overlay');
 
 export const contact = function () {
   const activateFocusedInput = function (e) {
@@ -104,6 +107,8 @@ export const contact = function () {
         return;
       }
       emailSend();
+      overlay.classList.remove('hidden');
+      overlay.insertAdjacentHTML('beforeend', showSpinner());
       return false;
     });
   });
@@ -142,9 +147,11 @@ export const contact = function () {
     }).then(message => {
       contactForm.reset();
       if (message === 'OK') {
+        overlay.classList.add('hidden');
+        overlay.lastElementChild.remove();
         swal({
           title: `Hi ${name} 👋`,
-          text: 'I recieved your message, wait a respond',
+          text: 'We recieved your message, wait a respond',
           icon: 'success',
         });
       } else {
