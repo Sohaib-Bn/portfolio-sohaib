@@ -50,17 +50,17 @@
     }
 
     &--1::after {
-      width: 75%;
+      width: 90%;
       transition: all 0.7s ease;
     }
 
     &--2::after {
-      width: 90%;
+      width: 75%;
       transition: all 0.7s ease 0.2s;
     }
 
     &--3::after {
-      width: 67%;
+      width: 85%;
       transition: all 0.7s ease 0.4s;
     }
 

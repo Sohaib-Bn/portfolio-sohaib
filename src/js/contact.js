@@ -90,6 +90,16 @@ export const contact = function () {
 
   const checkInputs = inputs => inputs.every(input => input.value !== '');
 
+  const showoverlay = function () {
+    overlay.classList.remove('hidden');
+    overlay.insertAdjacentHTML('beforeend', showSpinner());
+  };
+
+  const hideoverlay = function () {
+    overlay.classList.add('hidden');
+    overlay.lastElementChild.remove();
+  };
+
   btnSubmit.forEach(btn => {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -107,8 +117,7 @@ export const contact = function () {
         return;
       }
       emailSend();
-      overlay.classList.remove('hidden');
-      overlay.insertAdjacentHTML('beforeend', showSpinner());
+      showoverlay();
       return false;
     });
   });
@@ -139,16 +148,15 @@ export const contact = function () {
       fName.value.toLowerCase().slice(0, 1).toUpperCase() +
       fName.value.slice(1);
     Email.send({
-      SecureToken: '4b052543-b667-4c4d-ae5a-cb8b4c07c425',
+      SecureToken: 'e192c4db-cdb8-4da1-97fa-1c5436364319',
       To: 'sohaibbenyamna@gmail.com',
       From: 'info@sodev.live',
-      Subject: `New client ${email.value}`,
+      Subject: `New Client From ${email.value}`,
       Body: generateUserData(),
     }).then(message => {
+      hideoverlay();
       contactForm.reset();
       if (message === 'OK') {
-        overlay.classList.add('hidden');
-        overlay.lastElementChild.remove();
         swal({
           title: `Hi ${name} 👋`,
           text: 'We recieved your message, wait a respond',
@@ -157,8 +165,7 @@ export const contact = function () {
       } else {
         swal({
           title: `Sorry 😔`,
-          // text: 'Problem with the server try again',
-          text: message,
+          text: 'Problem with the server try again',
           icon: 'error',
         });
       }
