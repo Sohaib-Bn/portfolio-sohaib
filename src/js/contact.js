@@ -1,5 +1,4 @@
 import { showSpinner } from './project';
-console.log(showSpinner);
 const contactForm = document.querySelector('.contact__form');
 const btnSubmit = document.querySelectorAll('.btn--submit');
 const inputs = document.querySelectorAll('.contact__input');
@@ -147,6 +146,7 @@ export const contact = function () {
     const name =
       fName.value.toLowerCase().slice(0, 1).toUpperCase() +
       fName.value.slice(1);
+
     Email.send({
       SecureToken: 'e192c4db-cdb8-4da1-97fa-1c5436364319',
       To: 'sohaibbenyamna@gmail.com',
